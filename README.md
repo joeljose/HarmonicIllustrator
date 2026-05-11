@@ -1,64 +1,25 @@
-
 # HarmonicIllustrator
 
-## Project Overview
-HarmonicIllustrator: Reflects the harmonic nature of Fourier series and the illustrative aspect of the project.
-This project harnesses the power of the Fourier series to transform images into a series of continuous paths, elegantly drawn by interpreting image contours through Fourier transformations. It's a blend of mathematics, computer science, and art, offering a unique perspective on image processing and generative art.
+A concept project exploring how a **Fourier series** can redraw an image as a single continuous path traced by rotating epicycles. Each circle corresponds to one Fourier coefficient of the image contour, and the sum of their motions reconstructs the shape — the same idea popularised by 3Blue1Brown's [*But what is a Fourier series?*](https://www.youtube.com/watch?v=r6sGWTCMz2k).
 
-## Features
-- **Image to Path Conversion**: Converts standard images into vector paths.
-- **Fourier Transformation**: Applies Fourier series to interpret these paths.
-- **Customizable Parameters**: Offers control over the number of Fourier coefficients, animation speed, and more.
-- **Interactive Visualization**: Includes a real-time visualizer to observe the drawing process.
+## Idea
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+1. Extract a closed contour from a source image (edge detection / silhouette).
+2. Parametrise the contour as a complex-valued function `z(t)`.
+3. Compute its discrete Fourier series — each coefficient becomes one rotating vector.
+4. Animate the vectors tip-to-tail and trace the path their endpoint sweeps out.
 
-### Prerequisites
-What things you need to install the software and how to install them
-```
-git clone https://github.com/[your-username]/fourier-image-drawing.git
-cd fourier-image-drawing
-pip install -r requirements.txt
-```
+## Status
 
-### Installing
-A step-by-step series of examples that tell you how to get a development environment running
+Early — repo is currently a placeholder while the implementation is in progress. No runnable code yet.
 
-```
-python setup.py install
-```
+## Planned stack
 
-## Usage
-A quick guide on how to use the software after installation.
-
-```python
-from fourier_drawing import FourierDrawer
-drawer = FourierDrawer('path_to_image.jpg')
-drawer.draw()
-```
-
-## Built With
-* [Python](https://www.python.org/) - The primary programming language
-* [Matplotlib](https://matplotlib.org/) - Used for generating visualizations
-* [NumPy](https://numpy.org/) - For efficient numerical computations
-
-## Contributing
-Please read [CONTRIBUTING.md](https://github.com/[your-username]/fourier-image-drawing/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-* **[Your Name]** - *Initial work* - [YourUsername](https://github.com/YourUsername)
-
-See also the list of [contributors](https://github.com/[your-username]/fourier-image-drawing/contributors) who participated in this project.
+- Python · NumPy · OpenCV (contour extraction) · Matplotlib (animation)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+MIT — see [LICENSE](LICENSE).
 
 ## Follow Me
 
